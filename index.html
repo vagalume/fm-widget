@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<link rel="stylesheet" href="css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,700" rel="stylesheet">
+	</head>
+	<body>
+		<div id="vglFM">
+			<div class="hide" id="shareBox">
+				<button title="Fechar" id="closeShare">✕</button>
+				<p>Compartilhe esta estação com seus amigos!</p>
+				<ul><ul>
+			</div>
+			<header>
+				<div class="background"></div>
+				<div class="content">
+					<div class="top">
+						<div class="station-img">
+							<img src="img/placeholder.jpg"/>
+							<div class="button-container">
+								<div class="loader" style="display: none;">
+									<img class="spinner" src="img/spinner.svg" />
+									<img class="loader-icon" src="img/ico-vgl.svg" />
+								</div>
+								<button id="togglePlay">
+									<img src="img/ico-play.svg" />
+								</button>
+							</div>
+						</div>
+
+						<div class="info">
+							<div class="station-info">
+								<div>
+									<img src="img/ico-station.svg" />
+									<p>ESTAÇÃO</p>
+								</div>
+								<p id="stationName"></p>
+							</div>
+
+							<div class="song-info">
+								<p id="artistName"></p>
+								<p id="songName"></p>
+							</div>
+
+							<div class="progress-info">
+								<div class="bar">
+									<div id="progress">
+									</div>
+								</div>
+
+								<div class="timer">
+									<span id="startTime">00:00</span>
+									<span id="endTime">∞</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="bottom">
+						<div class="options">
+							<button class="share" title="Compartilhar">
+								<img src="img/share.svg" />
+							</button>
+
+							<button class="pop-up" title="Abrir pop-up">
+								<img src="img/pop-up.svg" />
+							</button>
+						</div>
+
+						<a class="share-links" href="https://vagalume.fm/share" title="Ouça no Vagalume.FM" target="_blank">
+							<img src="img/logo.png" />
+						</a>
+					</div>
+				</div>
+			</header>
+			<ul id="nextSongList"></ul>
+			<footer>
+				<p>Descubra mais estações no Vagalume.FM</p>
+				<div>
+					<a title="Google Play" href="https://play.google.com/store/apps/details?id=br.com.vagalume.fm&referrer=utm_source%3DWidget%26utm_campaign%3DPartner" target="_blank" class="play-button share-links"></a>
+					<a title="App Store" href="https://itunes.apple.com/us/app/vagalume.fm/id1154246231?pt=677321&ct=Widget%20-%20Partner&mt=8" target="_blank" class="store-button share-links"></a>
+				</div>
+				<div class="hide" id="errorPopup">
+					<span></span>
+					<button title="Fechar" id="closeError">✕</button>
+				</div>
+			</footer>
+		</div>
+	</body>
+	<script type="text/javascript">
+		function getMobileOperatingSystem() {
+			var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+			if (/windows phone/i.test(userAgent)) {
+				return "Windows Phone";
+			}
+
+			if (/android/i.test(userAgent)) {
+				return "Android";
+			}
+
+			if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+				return "iOS";
+			}
+
+			return "unknown";
+		}
+
+		if (getMobileOperatingSystem() === 'Android') {
+			document.querySelector('.store-button').style.display = 'none';
+		} else if (getMobileOperatingSystem() === 'iOS') {
+			document.querySelector('.play-button').style.display = 'none';
+		}
+	</script>
+	<script type="text/javascript" src="js/hls.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript">
+		fmWidget.init({
+			stationID: '1487264817696485', // https://vagalume.fm/carnaval/
+			target: 'https://siteparceiro.com/vagalumefm/index.html'
+		});
+	</script>
+</html>

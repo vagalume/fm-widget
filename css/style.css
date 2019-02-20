@@ -1,0 +1,570 @@
+@-webkit-keyframes spinner {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@-moz-keyframes spinner {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@-o-keyframes spinner {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes spinner {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+#vglFM {
+	max-width: 600px;
+	max-height: 600px;
+	min-width: 320px;
+	background-color: #2d2d2d;
+	font-family: 'Rubik', sans-serif;
+	border-radius: 5px 5px 0px 0px;
+	position: relative;
+}
+
+#vglFM header {
+	padding: 20px;
+	position: relative;
+}
+
+#vglFM .hide {
+	display: none !important;
+}
+
+#vglFM .background {
+	background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.3;
+}
+
+#vglFM header > .content {
+	position: relative;
+}
+
+#vglFM header .top {
+	display: flex;
+}
+
+#vglFM .station-img {
+	position: relative;
+	display: inline-block;
+	margin-right: 20px;
+	margin-bottom: 15px;
+}
+
+#vglFM .button-container{
+	position: absolute;
+	right: 7px;
+	bottom: 10px;
+}
+
+#vglFM #togglePlay {
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	border: none;
+	background: #CF0;
+	box-shadow: 0px 2px 5px 1px #333;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	outline: none;
+}
+
+#vglFM #togglePlay img {
+	width: 33px;
+	height: 33px;
+	position: absolute;
+}
+
+#vglFM .station-img > img {
+    width: 140px;
+    height: 140px;
+    background: #333;
+    border-radius: 5px;
+    border: none;
+    object-fit: cover;
+    box-shadow: 0px 8px 16px 0px #00000091;
+}
+
+#vglFM .options {
+	display: inline-flex;
+}
+
+#vglFM .options button {
+	width: 30px;
+	height: 30px;
+	background: none;
+	border: none;
+	padding: 0;
+	justify-content: center;
+	align-items: center;
+	display: inline-flex;
+	margin: 0px 5px;
+	cursor: pointer;
+	outline-color: #CF0;
+}
+
+#vglFM .options button img {
+    width: 30px;
+}
+
+#vglFM .options button.pop-up img {
+    width: 20px;
+}
+
+#vglFM .station-info > div {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#vglFM .station-info > div img {
+    width: 15px;
+    height: 15px;
+    margin-right: 3px;
+}
+
+#vglFM .station-info > div p {
+    color: #cf0;
+    font-size: 12px;
+    margin: 0;
+}
+
+#vglFM #stationName {
+    color: #FFF;
+    margin: 0;
+    font-size: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 24px;
+}
+
+#vglFM .info {
+    max-width: 400px;
+    min-width: 120px;
+    flex: 1;
+}
+
+#vglFM #artistName {
+    color: #CF0;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 19px;
+}
+
+#vglFM #songName {
+    margin: 0;
+    color: #fff;
+    font-size: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 24px;
+}
+
+#vglFM header .song-info {
+    margin-top: 20px;
+}
+
+#vglFM .progress-info .bar {
+    height: 4px;
+    background: #5e5e5e;
+    border-radius: 5px;
+    margin-top: 10px;
+	overflow: hidden;
+    position: relative;
+}
+
+#vglFM #progress {
+    background: #ccff00;
+    background: -moz-linear-gradient(left, #ccff00 0%, #00aacc 100%);
+    background: -webkit-linear-gradient(left, #ccff00 0%,#00aacc 100%);
+    background: linear-gradient(to right, #ccff00 0%,#00aacc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccff00', endColorstr='#00aacc',GradientType=1 );
+    width: 0;
+    height: 100%;
+	-webkit-transition: width 500ms;
+    transition: width 500ms;
+}
+
+#vglFM .timer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+#vglFM .timer span {
+    color: #FFF;
+    font-size: 12px;
+}
+
+#vglFM .bottom > a img {
+    height: 45px;
+}
+
+#vglFM .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#vglFM #nextSongList li .content a {
+	text-decoration: none;
+}
+
+#vglFM #nextSongList li .content img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 25px;
+	margin-right: 15px;
+	float: left;
+}
+
+#vglFM #nextSongList li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #3f3f3f;
+    padding-bottom: 15px;
+}
+
+#vglFM #nextSongList {
+    padding: 15px;
+    margin: 0;
+    max-height: 280px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-bottom: 0;
+    min-height: 280px;
+    margin: 10px 10px 0 10px;
+}
+
+#vglFM #nextSongList li .content {
+    display: flex;
+    align-items: center;
+	min-width: 0;
+}
+
+#vglFM #nextSongList li .content .song-info {
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#vglFM #nextSongList li .content .song-info p {
+    margin: 0;
+    color: #FFF;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+#vglFM #nextSongList li .content .song-info p:nth-child(1) {
+    color: #CF0;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#vglFM #nextSongList li .next-time {
+    display: flex;
+    align-items: center;
+    color: #969696;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+#vglFM #nextSongList li:last-child {
+    border-bottom: none;
+}
+
+#vglFM footer {
+    background: #333;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    justify-content: space-between;
+    border-radius: 0px 0px 5px 5px;
+	position: relative;
+}
+
+#vglFM footer p {
+    margin: 0;
+    color: #787878;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+#vglFM footer > div a {
+    width: 110px;
+    height: 35px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#vglFM footer > div {
+	display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#vglFM .play-button {
+    background-image: url('/img/gplay.svg');
+    margin-right: 10px;
+}
+
+#vglFM .store-button {
+    background-image: url('/img/appstore.svg');
+}
+
+#vglFM .play-button:hover {
+    background-image: url('/img/gplay-full.svg');
+}
+
+#vglFM .store-button:hover {
+    background-image: url('/img/appstore-full.svg');
+}
+
+#vglFM .loader {
+	width: 40px;
+    height: 40px;
+    background: #333;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#vglFM .loader .spinner {
+	-webkit-animation: spinner 700ms infinite linear;
+	-moz-animation: spinner 700ms infinite linear;
+	-ms-animation: spinner 700ms infinite linear;
+	-o-animation: spinner 700ms infinite linear;
+	animation: spinner 700ms infinite linear;
+	border-radius: 0.5em;
+	position: absolute;
+	width: 40px;
+}
+
+#vglFM .loader .loader-icon {
+	width: 25px;
+}
+
+#vglFM #errorPopup {
+	position: absolute;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	background: #000000b8;
+	text-align: center;
+	padding: 8px 30px;
+	border-radius: 5px;
+	color: #e6e6e6;
+	font-size: 15px;
+	font-weight: 300;
+	top: 50%;
+}
+
+#vglFM #errorPopup button {
+	position: absolute;
+    border: none;
+    color: #cf0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    background: transparent;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+
+#vglFM ::-webkit-scrollbar {
+    width: 10px;
+}
+
+#vglFM ::-webkit-scrollbar-track {
+    background: #1b1b1b;
+    border-radius: 10px 10px 0 0;
+}
+
+#vglFM ::-webkit-scrollbar-thumb {
+    background: #969696;
+    border-radius: 10px;
+}
+
+#vglFM .bottom > a img:hover,
+#vglFM .options button:hover, #vglFM #togglePlay:hover {
+    opacity: 0.7;
+}
+
+#vglFM #shareBox {
+	position: absolute;
+	background: #FFF;
+	z-index: 1;
+	left: 50%;
+	top: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	-webkit-transform: translate3d(-50%, -50%, 0);
+	max-width: 320px;
+	border-radius: 5px;
+	padding: 14px;
+	min-width: 240px;
+	box-shadow: 0px 8px 16px 0px #00000091;
+}
+
+#vglFM #shareBox #closeShare {
+	position: absolute;
+	right: 8px;
+	border: none;
+	color: #333;
+	font-size: 20px;
+	padding: 0;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	top: 8px;
+	outline-color: #0AC;
+	cursor: pointer;
+}
+
+#vglFM #shareBox p {
+	margin: 0;
+	font-size: 16px;
+	padding-right: 20px;
+}
+
+#vglFM #shareBox ul {
+	padding: 0;
+	margin: 0;
+	margin-top: 15px;
+}
+
+#vglFM #shareBox ul li {
+	list-style: none;
+	margin-bottom: 10px;
+}
+
+#vglFM #shareBox ul li a {
+	display: flex;
+	align-items: center;
+	color: #000;
+	text-decoration: none;
+}
+
+#vglFM #shareBox ul li a img {
+	width: 27px;
+	background: #3a549f;
+	height: 27px;
+	object-fit: contain;
+	border-radius: 25px;
+	padding: 4px;
+	margin-right: 10px;
+}
+
+#vglFM #shareBox ul li a span {
+	font-size: 14px;
+}
+
+#vglFM #shareBox ul li.share-twitter a img {
+    background: #39b8ff;
+}
+
+#vglFM #shareBox ul li.share-google a img {
+    background: #dc4a38;
+}
+
+#vglFM #shareBox ul li.share-whatsapp a img {
+    background: #56d164;
+}
+
+#vglFM #shareBox ul li.share-messenger a img {
+    background: #3692fb;
+}
+
+#vglFM #shareBox ul li a:hover {
+    opacity: 0.7;
+}
