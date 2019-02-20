@@ -64,13 +64,12 @@
 }
 
 #vglFM {
-	max-width: 600px;
-	max-height: 600px;
-	min-width: 320px;
 	background-color: #2d2d2d;
 	font-family: 'Rubik', sans-serif;
 	border-radius: 5px 5px 0px 0px;
 	position: relative;
+	border-radius: 5px;
+	overflow: hidden;
 }
 
 #vglFM header {
@@ -297,11 +296,10 @@
 #vglFM #nextSongList {
     padding: 15px;
     margin: 0;
-    max-height: 280px;
+    max-height: calc(100vh - 248px - 70px - 25px);
     overflow-x: hidden;
     overflow-y: scroll;
     padding-bottom: 0;
-    min-height: 280px;
     margin: 10px 10px 0 10px;
 }
 
@@ -309,6 +307,10 @@
     display: flex;
     align-items: center;
 	min-width: 0;
+}
+
+#vglFM #nextSongList li .content > a{
+		width: 100%;
 }
 
 #vglFM #nextSongList li .content .song-info {
@@ -567,4 +569,97 @@
 
 #vglFM #shareBox ul li a:hover {
     opacity: 0.7;
+}
+
+body, html{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+@media (max-height: 400px){
+	#vglFM #nextSongList{
+		display: none;
+	}
+
+	#vglFM header{
+		padding-top: calc((100vh - 70px - 208px) / 2);
+		padding-bottom: calc((100vh - 70px - 208px) / 2);
+	}
+}
+
+@media (max-height: 312px){
+	#vglFM #nextSongList,
+	#vglFM footer {
+		display: none;
+	}
+
+	#vglFM header{
+		padding-top: calc((100vh - 208px) / 2);
+		padding-bottom: calc((100vh - 208px) / 2);
+	}
+}
+
+@media (max-width: 360px){
+	#vglFM .station-img > img{
+		width: 100px;
+		height: 100px;
+	}
+
+	#vglFM #nextSongList li .content img {
+		width: 40px;
+		height: 40px;
+	}
+
+	#vglFM #nextSongList{
+		max-height: calc(100vh - 248px - 70px - 5px);
+	}
+}
+
+@media (max-width: 430px){
+	#vglFM #nextSongList li .content .song-info p{
+		font-size: 14px;
+	}
+
+	#vglFM #nextSongList li .next-time,
+	#vglFM #nextSongList li .content .song-info p:nth-child(1),
+	#vglFM .station-info > div p
+	{
+		font-size: 10px;
+	}
+
+	#vglFM #stationName{
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 295px){
+	#vglFM #nextSongList li .content img{
+		display: none;
+	}
+
+	#vglFM #nextSongList li .content .song-info{
+		width: 100%;
+	}
+}
+
+@media (max-width: 360px) and (max-height: 400px) and (min-height: 312px){
+	#vglFM header{
+		padding-top: calc((100vh - 70px - 188px) / 2);
+		padding-bottom: calc((100vh - 70px - 188px) / 2);
+	}
+}
+
+
+@media (max-width: 360px) and (max-height: 312px){
+	#vglFM header{
+		padding-top: calc((100vh - 188px) / 2);
+		padding-bottom: calc((100vh - 188px) / 2);
+	}
+}
+
+@media (max-height: 245px){
+	#vglFM header{
+		padding-top: 20px;
+	}
 }
