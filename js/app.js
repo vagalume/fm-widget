@@ -322,8 +322,10 @@ var fmWidget = {};
 	var $widgetBG = $widget.querySelector('.background');
 	var $stationImage = $widget.querySelector('.station-img > img');
 	var $stationName = $widget.querySelector('#stationName');
+	var $stationUrl = $widget.querySelector('#stationUrl');
 	var $artistName = $widget.querySelector('#artistName');
 	var $songName = $widget.querySelector('#songName');
+	var $songUrl = $widget.querySelector('#songUrl');
 	var $nextSongList = $widget.querySelector('#nextSongList');
 	var $togglePlay = $widget.querySelector('#togglePlay');
 	var $playIcon = $togglePlay.querySelector('img');
@@ -411,6 +413,7 @@ var fmWidget = {};
 
 			$artistName.innerHTML = song.artist.name;
 			$songName.innerHTML = song.title.name;
+			$songUrl.href = song.title.url;
 
 			buildNextList(songs);
 		})
@@ -450,6 +453,7 @@ var fmWidget = {};
 		$widgetBG.style.backgroundImage = "url('" + station.img['bg-low'] + "')";
 		$stationImage.setAttribute('src', station.img.default);
 		$stationName.innerHTML = station.name;
+		$stationUrl.href = 'https://vagalume.fm/' + station.slug + '/';
 	}
 
 	function onTogglePlay() {
@@ -521,12 +525,14 @@ var fmWidget = {};
 				id: metadata.extra.pointerID,
 				artist: metadata.band,
 				song: metadata.song,
+				url: 'https://www.vagalume.com.br/' + metadata.band_url + '/' + metadata.song_url + '.html',
 				position: metadata.time.tsStart,
 				duration: metadata.duration
 			};
 
 			$artistName.innerHTML = currentSong.artist;
 			$songName.innerHTML = currentSong.song;
+			$songUrl.href = currentSong.url;
 
 			setProgress(currentSong.position, currentSong.duration);
 			startProgress();
