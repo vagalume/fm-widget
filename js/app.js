@@ -509,7 +509,7 @@ var fmWidget = {};
 			audio = new Audio;
 			hls = new Hls({ liveSyncDurationCount: HLS_TOTAL_TARGET_DURATION, fragLoadingMaxRetry: 15, manifestLoadingMaxRetry: 15, levelLoadingMaxRetry: 15, defaultAudioCodec: 'mp4a.40.5', fragLoadingMaxRetryTimeout: 2500, manifestLoadingMaxRetryTimeout: 2500, levelLoadingMaxRetryTimeout: 2500, manifestLoadingTimeOut: 30000, levelLoadingTimeOut: 30000, fragLoadingTimeOut: 80000 });
 
-			hls.loadSource("http://stream.vagalume.fm/hls/" + station.id + "/aac.m3u8");
+			hls.loadSource("https://stream.vagalume.fm/hls/" + station.id + "/aac.m3u8");
 			hls.attachMedia(audio);
 			hls.startLoad(0);
 
