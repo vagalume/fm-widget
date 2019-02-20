@@ -481,7 +481,7 @@ var fmWidget = {};
 	}
 
 	function play() {
-		if (state !== 0) setState(STATE_BUFFERING);
+		setState(STATE_BUFFERING);
 		if (!audio || !hls) createPlayer();
 
 		audio.play();
@@ -768,7 +768,6 @@ var fmWidget = {};
 
 				buildShareLinks();
 				setStationSongs();
-				createPlayer();
 
 				$openPopup.addEventListener('click', onOpenPopup);
 				$togglePlay.addEventListener('click', onTogglePlay);
