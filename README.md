@@ -10,3 +10,8 @@ fmWidget.init({
     target: 'https://siteparceiro.com/vagalumefm/index.html'
 });
 ```
+
+# Github Mirror
+
+Este repositório é espelhado no Github
+https://github.com/vagalume/fm-widget/
