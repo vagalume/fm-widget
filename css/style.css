@@ -64,18 +64,25 @@
 }
 
 #vglFM {
-	max-width: 600px;
-	max-height: 600px;
-	min-width: 320px;
-	background-color: #2d2d2d;
 	font-family: 'Rubik', sans-serif;
 	border-radius: 5px 5px 0px 0px;
 	position: relative;
+	border-radius: 5px;
+	overflow: hidden;
 }
 
+#vglFM::before{
+	content: '';
+	position: absolute;
+	background: #2d2d2d;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -99;
+}
 #vglFM header {
 	padding: 20px;
-	position: relative;
 }
 
 #vglFM .hide {
@@ -90,10 +97,12 @@
     left: 0;
     top: 0;
     opacity: 0.3;
+		z-index: -1;
 }
 
 #vglFM header > .content {
 	position: relative;
+	width: 100%;
 }
 
 #vglFM header .top {
@@ -104,7 +113,6 @@
 	position: relative;
 	display: inline-block;
 	margin-right: 20px;
-	margin-bottom: 15px;
 }
 
 #vglFM .button-container{
@@ -114,15 +122,11 @@
 }
 
 #vglFM #togglePlay {
-	width: 40px;
-	height: 40px;
-	border-radius: 20px;
+	font-size: 30px;
+	width: 45px;
+	height: 35px;
 	border: none;
-	background: #CF0;
-	box-shadow: 0px 2px 5px 1px #333;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	background: transparent;
 	cursor: pointer;
 	outline: none;
 }
@@ -134,8 +138,8 @@
 }
 
 #vglFM .station-img > img {
-    width: 140px;
-    height: 140px;
+    width: 170px;
+    height: 170px;
     background: #333;
     border-radius: 5px;
     border: none;
@@ -162,10 +166,6 @@
 }
 
 #vglFM .options button img {
-    width: 30px;
-}
-
-#vglFM .options button.pop-up img {
     width: 20px;
 }
 
@@ -199,9 +199,9 @@
 }
 
 #vglFM .info {
-    max-width: 400px;
     min-width: 120px;
     flex: 1;
+		display: flex;
 }
 
 #vglFM #artistName {
@@ -261,14 +261,17 @@
     font-size: 12px;
 }
 
-#vglFM .bottom > a img {
+#vglFM .share-options > a img {
     height: 45px;
 }
 
-#vglFM .bottom {
+#vglFM .share-options {
     display: flex;
     align-items: center;
     justify-content: space-between;
+		position: absolute;
+		right: 0;
+		top: 10px;
 }
 
 #vglFM a {
@@ -297,18 +300,23 @@
 #vglFM #nextSongList {
     padding: 15px;
     margin: 0;
-    max-height: 280px;
+    max-height: calc(100vh - 298px - 41px);
     overflow-x: hidden;
     overflow-y: scroll;
     padding-bottom: 0;
-    min-height: 280px;
-    margin: 10px 10px 0 10px;
+		background-color: #00000082;
 }
 
 #vglFM #nextSongList li .content {
     display: flex;
     align-items: center;
 	min-width: 0;
+}
+
+#vglFM #nextSongList li .content > a{
+		width: 100%;
+		display: flex;
+		align-items: center;
 }
 
 #vglFM #nextSongList li .content .song-info {
@@ -350,24 +358,25 @@
 }
 
 #vglFM footer {
-    background: #333;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    padding: 0 25px;
-    justify-content: space-between;
-    border-radius: 0px 0px 5px 5px;
+  background: #00000054;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 0px 0px 5px 5px;
 	position: relative;
 }
 
 #vglFM footer p {
     margin: 0;
-    color: #787878;
+    color: white;
     font-size: 14px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 #vglFM footer > div a {
@@ -380,10 +389,13 @@
 
 #vglFM footer > div {
 	display: flex;
-    flex-direction: row;
-    flex: 1;
+    flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+}
+
+#vglFM footer .footer-info{
+	height: auto;
 }
 
 #vglFM .play-button {
@@ -473,7 +485,7 @@
     border-radius: 10px;
 }
 
-#vglFM .bottom > a img:hover,
+#vglFM .share-options > a img:hover,
 #vglFM .options button:hover, #vglFM #togglePlay:hover {
     opacity: 0.7;
 }
@@ -567,4 +579,229 @@
 
 #vglFM #shareBox ul li a:hover {
     opacity: 0.7;
+}
+
+body, html{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+@media (max-width: 360px){
+	#vglFM .station-img > img{
+		width: 100px;
+		height: 100px;
+	}
+
+	#vglFM .button-container{
+		bottom: 45px;
+	}
+
+	#vglFM #nextSongList li .content img {
+		width: 40px;
+		height: 40px;
+	}
+
+	#vglFM #nextSongList{
+		max-height: calc(100vh - 248px - 70px - 5px);
+	}
+}
+
+@media (max-width: 430px){
+	#vglFM #nextSongList li .content .song-info p{
+		font-size: 14px;
+	}
+
+	#vglFM #nextSongList li .next-time,
+	#vglFM #nextSongList li .content .song-info p:nth-child(1),
+	#vglFM .station-info > div p
+	{
+		font-size: 10px;
+	}
+
+	#vglFM #stationName{
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 295px){
+	#vglFM #nextSongList li .content img{
+		display: none;
+	}
+
+	#vglFM #nextSongList li .content .song-info{
+		width: 100%;
+	}
+}
+
+@media (max-width: 360px) and (max-height: 312px){ /* TODO: Check if Used */
+	#vglFM header{
+		padding-top: calc((100vh - 188px) / 2);
+		padding-bottom: calc((100vh - 188px) / 2);
+	}
+}
+
+@media (max-height: 184px){
+	#vglFM header{
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+}
+
+@media (max-height: 394px){
+	#vglFM #nextSongList{
+		display: none;
+	}
+
+	#vglFM{
+		display: flex;
+		flex-wrap: nowrap;
+	}
+	#vglFM footer{
+		width: 100%;
+		max-width: 300px;
+		height: auto;
+		flex-shrink: 1;
+	}
+
+	#vglFM header{
+		display: flex;
+		padding-top: calc((100vh - 171px) / 2);
+		padding-bottom: calc((100vh - 144px) / 2);
+		width: calc(100% - 490px);
+		min-width: 350px;
+		flex: 1;
+	}
+}
+
+#vglFM footer .footer-logo{
+	height: 75px;
+	margin-bottom: 15px;
+}
+
+#vglFM footer .footer-info > div{
+	display: flex;
+	flex-direction: row;
+}
+
+#vglFM header .info > .song-info{
+	flex: 1;
+	padding: 0 20px;
+}
+#vglFM header .station-info{
+	flex: 1;
+	color: white;
+  max-width: 40%;
+}
+
+#vglFM #stationDescription{
+  text-overflow: ellipsis;
+  overflow: hidden;
+	max-height: 76px;
+}
+
+/* @media (max-width: 960px) and (max-height: 394px) {
+	#vglFM footer{
+		max-width: 350px;
+	}
+} */
+@media (max-width: 1160px) and (max-height: 395px){
+	#vglFM header{
+		padding-top: calc((100vh - 144px) / 2);
+	}
+}
+
+@media (max-width: 930px) and (min-height: 395px) {
+	#vglFM #nextSongList{
+		max-height: calc(100vh - 298px - 11px);
+	}
+}
+
+@media (max-width: 1160px) and (max-height: 395px),
+				(max-width: 930px) and (min-height: 395px){
+
+	#vglFM .station-img > img{
+		width: 140px;
+		height: 140px;
+	}
+
+	#vglFM footer{
+		padding: 0 15px;
+	}
+
+	#vglFM #stationDescription{
+		display: none;
+	}
+
+	#vglFM .info{
+		display: block;
+	}
+
+	#vglFM header .info > .song-info{
+		padding: 0;
+	}
+
+	#vglFM .share-options{
+		right: -10px;
+		top: -10px;
+	}
+}
+
+@media (min-height: 395px){
+	#vglFM .share-options{
+		top: 0;
+	}
+
+	#vglFM footer{
+		height: 160px;
+		justify-content: center;
+		background: #000000ba;
+		padding-bottom: 10px;
+	}
+
+	#vglFM footer .footer-logo{
+		margin-right: 20px;
+	}
+}
+
+@media (max-width: 400px) and (min-height: 395px){
+	#vglFM footer .footer-logo{
+		height: 75px;
+	}
+}
+
+@media (max-width: 380px) and (min-height: 395px){
+	#vglFM footer .footer-logo{
+		height: 50px;
+	}
+
+	#vglFM footer p{
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 800px) and (max-height: 394px){
+	#vglFM footer .footer-logo{
+		height: 60px;
+	}
+	#vglFM footer {
+    max-width: 260px;
+	}
+
+	#vglFM header .station-info {
+		max-width: none;
+	}
+}
+
+@media (min-width: 800px) and (min-height: 394px){
+	#vglFM footer{
+		flex-direction: row;
+		height: 100px;
+	}
+}
+
+@media (max-width: 930px) and (min-height: 394px){
+	#vglFM header .station-info{
+		max-width: calc(100% - 85px);
+	}
 }

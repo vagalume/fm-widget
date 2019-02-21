@@ -11,6 +11,13 @@ fmWidget.init({
 });
 ```
 
+# Dimensões
+
+## Horizontal
+
+Largura Mínima: 690px
+Altura Mínima: 180px
+
 # Github Mirror
 
 Este repositório é espelhado no Github

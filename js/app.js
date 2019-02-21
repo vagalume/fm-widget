@@ -322,13 +322,14 @@ var fmWidget = {};
 	var $widgetBG = $widget.querySelector('.background');
 	var $stationImage = $widget.querySelector('.station-img > img');
 	var $stationName = $widget.querySelector('#stationName');
+	var $stationDescription = $widget.querySelector('#stationDescription');
 	var $stationUrl = $widget.querySelector('#stationUrl');
 	var $artistName = $widget.querySelector('#artistName');
 	var $songName = $widget.querySelector('#songName');
 	var $songUrl = $widget.querySelector('#songUrl');
 	var $nextSongList = $widget.querySelector('#nextSongList');
 	var $togglePlay = $widget.querySelector('#togglePlay');
-	var $playIcon = $togglePlay.querySelector('img');
+	var $playIcon = $togglePlay.querySelector('.vagaButton');
 	var $loader = $widget.querySelector('.loader');
 	var $progress = $widget.querySelector('#progress');
 	var $startTime = $widget.querySelector('#startTime');
@@ -365,7 +366,7 @@ var fmWidget = {};
 		var xhr = new XMLHttpRequest();
 
 		return new Promise(function(resolve, reject) {
-			xhr.open('GET', "https://api.vagalume.fm/v2/" + stationID + "/next?count=20", true);
+			xhr.open('GET', "https://api.vagalume.fm/v2/" + stationID + "/next?count="+(window.getComputedStyle($nextSongList).display === "none" ? 1 : 20), true);
 			xhr.send();
 
 			xhr.addEventListener("readystatechange", function(e) {
@@ -453,6 +454,7 @@ var fmWidget = {};
 		$widgetBG.style.backgroundImage = "url('" + station.img['bg-low'] + "')";
 		$stationImage.setAttribute('src', station.img.default);
 		$stationName.innerHTML = station.name;
+		$stationDescription.innerHTML = station.desc_station;
 		$stationUrl.href = 'https://vagalume.fm/' + station.slug + '/';
 	}
 
@@ -651,12 +653,14 @@ var fmWidget = {};
 				break;
 			case STATE_RUNNING:
 				showTogglePlay();
-				$playIcon.setAttribute('src', '/img/ico-pause.svg');
+				$playIcon.classList.add('pause');
+				$playIcon.classList.remove('play');
 				sendMetadata();
 				break;
 			case STATE_STOPPED:
 				showTogglePlay();
-				$playIcon.setAttribute('src', '/img/ico-play.svg');
+				$playIcon.classList.remove('pause');
+				$playIcon.classList.add('play');
 				break;
 			default:
 		}
@@ -785,4 +789,9 @@ var fmWidget = {};
 			setError(START_ERROR);
 		}
 	};
+
+	fmWidget.onResize = function(ev) {
+		if(window.getComputedStyle($nextSongList).display !== "none" && $nextSongList.childElementCount === 1)
+			setStationSongs();
+	}
 })();

@@ -1,0 +1,60 @@
+	.vagaButton {
+		border: none;
+		background-color: transparent;
+		height: 0.8em;
+		display: flex;
+		position: relative;
+		min-width: calc(1.5em - 1ex);
+		padding: 0;
+		text-transform: uppercase;
+		text-align: center;
+		margin-left: 1ex;
+		justify-content: center;
+		flex-direction: column;
+		font-family: Rubik, Arial;
+	}
+	.vagaButton:before {
+		content: "";
+		position: absolute;
+		background-repeat: no-repeat;
+		background-size: contain;
+		width: 1.3em;
+		height: 1.3em;
+		top: -0.35em;
+		left: -1ex;
+	}
+	.vagaButton:after {
+		content: ".";
+		font-size: 0.45em;
+		text-align: center;
+		font-weight: 700;
+		line-height: 0.8em;
+	}
+
+	.vagaButton.alpha.ext { background-color: rgba(255,255,255,.3); transition: background-color 0.2s ease;}
+
+	.vagaButton.play:before {background-image: url('/img/play-btn/sprite.svg#play-btn');}
+	.vagaButton.play:hover:before {background-image: url('/img/play-btn/sprite.svg#play-btn-hover');}
+	.vagaButton.play:active:before {background-image: url('/img/play-btn/sprite.svg#play-btn-pressed');}
+
+	.vagaButton.pause:before {background-image: url('/img/play-btn/sprite.svg#pause-btn');}
+	.vagaButton.pause:hover:before {background-image: url('/img/play-btn/sprite.svg#pause-btn-hover');}
+	.vagaButton.pause:active:before {background-image: url('/img/play-btn/sprite.svg#pause-btn-pressed');}
+
+	.vagaButton.playAlpha:before {background-image: url('/img/play-btn/sprite-big.svg#play-btn-big-alpha');}
+	.vagaButton.playAlpha:hover:before {background-image: url('/img/play-btn/sprite-big.svg#play-btn-big-hover');}
+	.vagaButton.playAlpha:active:before {background-image: url('/img/play-btn/sprite-big.svg#play-btn-big-pressed');}
+
+@media (min-width: 360px) {
+	.vagaButton.ext {
+		background-color: #333;
+		color: #FFF;
+		padding-left: 1.8ex;
+		padding-right: 0.6ex;
+		border-radius: 1em;
+	}
+	.vagaButton.ext:hover {background-color: #0AD;}
+	.vagaButton.ext:active {background-color: #068;}
+	.vagaButton.ext.play:after {content: "play";}
+	.vagaButton.ext.pause:after {content: "pause";font-size: 0.340em;}
+}
