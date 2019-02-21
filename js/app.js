@@ -365,7 +365,7 @@ var fmWidget = {};
 		var xhr = new XMLHttpRequest();
 
 		return new Promise(function(resolve, reject) {
-			xhr.open('GET', "https://api.vagalume.fm/v2/" + stationID + "/next?count=20", true);
+			xhr.open('GET', "https://api.vagalume.fm/v2/" + stationID + "/next?count="+(window.getComputedStyle($nextSongList).display === "none" ? 1 : 20), true);
 			xhr.send();
 
 			xhr.addEventListener("readystatechange", function(e) {
@@ -785,4 +785,9 @@ var fmWidget = {};
 			setError(START_ERROR);
 		}
 	};
+
+	fmWidget.onResize = function(ev) {
+		if(window.getComputedStyle($nextSongList).display !== "none" && $nextSongList.childElementCount === 1)
+			setStationSongs();
+	}
 })();
