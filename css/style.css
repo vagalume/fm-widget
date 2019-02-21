@@ -64,7 +64,6 @@
 }
 
 #vglFM {
-	background-color: #2d2d2d;
 	font-family: 'Rubik', sans-serif;
 	border-radius: 5px 5px 0px 0px;
 	position: relative;
@@ -72,6 +71,16 @@
 	overflow: hidden;
 }
 
+#vglFM::before{
+	content: '';
+	position: absolute;
+	background: #2d2d2d;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -99;
+}
 #vglFM header {
 	padding: 20px;
 }
@@ -88,6 +97,7 @@
     left: 0;
     top: 0;
     opacity: 0.3;
+		z-index: -1;
 }
 
 #vglFM header > .content {
@@ -290,11 +300,11 @@
 #vglFM #nextSongList {
     padding: 15px;
     margin: 0;
-    max-height: calc(100vh - 298px - 31px);
+    max-height: calc(100vh - 298px - 41px);
     overflow-x: hidden;
     overflow-y: scroll;
     padding-bottom: 0;
-    margin: 10px 10px 0 10px;
+		background-color: #00000082;
 }
 
 #vglFM #nextSongList li .content {
@@ -348,7 +358,7 @@
 }
 
 #vglFM footer {
-  background: #0000003b;
+  background: #00000054;
   height: 70px;
   display: flex;
   align-items: center;
@@ -695,12 +705,20 @@ body, html{
 		max-width: 350px;
 	}
 } */
-
-@media (max-width: 1160px) and (max-height: 395px),
-				(max-width: 930px) and (min-height: 395px){
+@media (max-width: 1160px) and (max-height: 395px){
 	#vglFM header{
 		padding-top: calc((100vh - 144px) / 2);
 	}
+}
+
+@media (max-width: 930px) and (min-height: 395px) {
+	#vglFM #nextSongList{
+		max-height: calc(100vh - 298px - 11px);
+	}
+}
+
+@media (max-width: 1160px) and (max-height: 395px),
+				(max-width: 930px) and (min-height: 395px){
 
 	#vglFM .station-img > img{
 		width: 140px;
@@ -735,8 +753,10 @@ body, html{
 	}
 
 	#vglFM footer{
-		height: 120px;
+		height: 160px;
 		justify-content: center;
+		background: #000000ba;
+		padding-bottom: 10px;
 	}
 
 	#vglFM footer .footer-logo{
@@ -770,5 +790,18 @@ body, html{
 
 	#vglFM header .station-info {
 		max-width: none;
+	}
+}
+
+@media (min-width: 800px) and (min-height: 394px){
+	#vglFM footer{
+		flex-direction: row;
+		height: 100px;
+	}
+}
+
+@media (max-width: 930px) and (min-height: 394px){
+	#vglFM header .station-info{
+		max-width: calc(100% - 85px);
 	}
 }
