@@ -38,16 +38,28 @@
 									<p>ESTAÇÃO</p>
 								</div>
 								<a id="stationUrl" target=_blank href=https://vagalume.fm/><p id="stationName"></p></a>
+								<p id="stationDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
 							</div>
-
 							<div class="song-info">
-								<a id="songUrl" target=_blank href="https://www.vagalume.com.br/">
-									<p id="artistName"></p>
-									<p id="songName"></p>
-								</a>
-							</div>
+								<div class="song-info">
+									<div class="share-options">
+										<div class="options">
+											<button class="share" title="Compartilhar">
+												<img src="img/share.svg" />
+											</button>
 
-							<div class="progress-info">
+											<button class="pop-up" title="Abrir pop-up">
+												<img src="img/pop-up.svg" />
+											</button>
+										</div>
+									</div>
+									<a id="songUrl" target=_blank href="https://www.vagalume.com.br/">
+										<p id="artistName"></p>
+										<p id="songName"></p>
+									</a>
+								</div>
+
+								<div class="progress-info">
 								<div class="bar">
 									<div id="progress">
 									</div>
@@ -58,36 +70,26 @@
 									<span id="endTime">∞</span>
 								</div>
 							</div>
+							</div>
 						</div>
-					</div>
-
-					<div class="bottom">
-						<div class="options">
-							<button class="share" title="Compartilhar">
-								<img src="img/share.svg" />
-							</button>
-
-							<button class="pop-up" title="Abrir pop-up">
-								<img src="img/pop-up.svg" />
-							</button>
-						</div>
-
-						<a class="share-links" href="https://vagalume.fm/share" title="Ouça no Vagalume.FM" target="_blank">
-							<img src="img/logo.png" />
-						</a>
 					</div>
 				</div>
 			</header>
 			<ul id="nextSongList"></ul>
 			<footer>
-				<p>Descubra mais estações no Vagalume.FM</p>
-				<div>
-					<a title="Google Play" href="https://play.google.com/store/apps/details?id=br.com.vagalume.fm&referrer=utm_source%3DWidget%26utm_campaign%3DPartner" target="_blank" class="play-button share-links"></a>
-					<a title="App Store" href="https://itunes.apple.com/us/app/vagalume.fm/id1154246231?pt=677321&ct=Widget%20-%20Partner&mt=8" target="_blank" class="store-button share-links"></a>
-				</div>
-				<div class="hide" id="errorPopup">
-					<span></span>
-					<button title="Fechar" id="closeError">✕</button>
+				<img class="footer-logo" src="img/fm.png" />
+				<div class="footer-info">
+					<div>
+						<p>Descubra mais estações no Vagalume.FM</p>
+					</div>
+					<div>
+						<a title="Google Play" href="https://play.google.com/store/apps/details?id=br.com.vagalume.fm&referrer=utm_source%3DWidget%26utm_campaign%3DPartner" target="_blank" class="play-button share-links"></a>
+						<a title="App Store" href="https://itunes.apple.com/us/app/vagalume.fm/id1154246231?pt=677321&ct=Widget%20-%20Partner&mt=8" target="_blank" class="store-button share-links"></a>
+					</div>
+					<div class="hide" id="errorPopup">
+						<span></span>
+						<button title="Fechar" id="closeError">✕</button>
+					</div>
 				</div>
 			</footer>
 		</div>
