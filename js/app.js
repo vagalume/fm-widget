@@ -399,7 +399,7 @@ var fmWidget = {};
 					+ '</div>'
 					+ '</a>'
 				+ '</div>'
-				+ '<span class="next-time">TOCARÁ ÀS ' + (hours + ':' + minutes) + '</span>'
+				+ '<span class="next-time">' + (hours + ':' + minutes) + '</span>'
 			+ '</li>';
 		}
 

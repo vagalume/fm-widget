@@ -199,7 +199,7 @@
 }
 
 #vglFM .info {
-    min-width: 120px;
+    min-width: 105px;
     flex: 1;
 		display: flex;
 }
@@ -351,6 +351,11 @@
     color: #969696;
     font-size: 12px;
     white-space: nowrap;
+}
+
+#vglFM #nextSongList li .next-time::before{
+	content: 'TOCARÁ ÀS ';
+	margin-right: 3px;
 }
 
 #vglFM #nextSongList li:last-child {
@@ -593,10 +598,6 @@ body, html{
 		height: 100px;
 	}
 
-	#vglFM .button-container{
-		bottom: 45px;
-	}
-
 	#vglFM #nextSongList li .content img {
 		width: 40px;
 		height: 40px;
@@ -612,11 +613,14 @@ body, html{
 		font-size: 14px;
 	}
 
-	#vglFM #nextSongList li .next-time,
 	#vglFM #nextSongList li .content .song-info p:nth-child(1),
 	#vglFM .station-info > div p
 	{
 		font-size: 10px;
+	}
+
+	#vglFM #nextSongList li .next-time::before{
+		content: '';
 	}
 
 	#vglFM #stationName{
@@ -711,9 +715,15 @@ body, html{
 	}
 }
 
-@media (max-width: 930px) and (min-height: 395px) {
+@media (max-width: 930px) and (min-width: 800px) and (min-height: 395px) {
 	#vglFM #nextSongList{
 		max-height: calc(100vh - 298px - 11px);
+	}
+}
+
+@media (max-width: 800px) and (min-height: 395px) {
+	#vglFM #nextSongList{
+		max-height: calc(100vh - 298px - 71px);
 	}
 }
 
@@ -802,6 +812,6 @@ body, html{
 
 @media (max-width: 930px) and (min-height: 394px){
 	#vglFM header .station-info{
-		max-width: calc(100% - 85px);
+		max-width: calc(100% - 68px);
 	}
 }
