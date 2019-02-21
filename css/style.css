@@ -112,15 +112,11 @@
 }
 
 #vglFM #togglePlay {
-	width: 40px;
-	height: 40px;
-	border-radius: 20px;
+	font-size: 30px;
+	width: 45px;
+	height: 35px;
 	border: none;
-	background: #CF0;
-	box-shadow: 0px 2px 5px 1px #333;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	background: transparent;
 	cursor: pointer;
 	outline: none;
 }

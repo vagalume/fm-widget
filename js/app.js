@@ -329,7 +329,7 @@ var fmWidget = {};
 	var $songUrl = $widget.querySelector('#songUrl');
 	var $nextSongList = $widget.querySelector('#nextSongList');
 	var $togglePlay = $widget.querySelector('#togglePlay');
-	var $playIcon = $togglePlay.querySelector('img');
+	var $playIcon = $togglePlay.querySelector('.vagaButton');
 	var $loader = $widget.querySelector('.loader');
 	var $progress = $widget.querySelector('#progress');
 	var $startTime = $widget.querySelector('#startTime');
@@ -653,12 +653,14 @@ var fmWidget = {};
 				break;
 			case STATE_RUNNING:
 				showTogglePlay();
-				$playIcon.setAttribute('src', '/img/ico-pause.svg');
+				$playIcon.classList.add('pause');
+				$playIcon.classList.remove('play');
 				sendMetadata();
 				break;
 			case STATE_STOPPED:
 				showTogglePlay();
-				$playIcon.setAttribute('src', '/img/ico-play.svg');
+				$playIcon.classList.remove('pause');
+				$playIcon.classList.add('play');
 				break;
 			default:
 		}
