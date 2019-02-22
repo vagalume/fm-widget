@@ -794,9 +794,10 @@ body, html{
 	#vglFM footer .footer-logo{
 		height: 60px;
 	}
-	#vglFM footer {
+
+	/*#vglFM footer {
     max-width: 260px;
-	}
+	} */
 
 	#vglFM header .station-info {
 		max-width: none;
@@ -813,5 +814,67 @@ body, html{
 @media (max-width: 930px) and (min-height: 394px){
 	#vglFM header .station-info{
 		max-width: calc(100% - 68px);
+	}
+}
+
+@media (max-width: 400px){ /* Info do player caí para baixo  */
+	#vglFM{
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+	#vglFM header{
+		flex: 1;
+		flex-basis: 350px;
+		flex-grow: 0;
+    display: flex;
+		align-items: center;
+		position: relative;
+	}
+	#vglFM header .top{
+		flex-direction: column;
+	}
+	#vglFM .background{
+		height: 100vh;
+	}
+	#vglFM .station-img{
+		flex-grow: 1;
+		text-align: center;
+		margin: 0;
+	}
+	#vglFM .station-img > img{
+		width: auto;
+		height: 100%;
+		max-height: 150px;
+		max-width: 150px;
+	}
+	#vglFM .info{
+		margin-top: 15px;
+		text-align: center;
+	}
+	#vglFM .button-container{
+		right: auto;
+		left: 56%;
+		bottom: 10px;
+	}
+	#vglFM header .station-info{
+		max-width: none;
+	}
+	#vglFM .share-options{
+		position: fixed;
+		right: 5px;
+		top: 5px;
+	}
+	#vglFM #nextSongList{
+		flex: 1;
+	}
+}
+
+@media (max-width: 400px)  and (max-height: 640px) {
+	#vglFM #nextSongList{
+		display: none;
+	}
+	#vglFM header{
+		flex-grow: 1;
 	}
 }
