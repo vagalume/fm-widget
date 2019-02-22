@@ -781,6 +781,7 @@ var fmWidget = {};
 
 				$openPopup.addEventListener('click', onOpenPopup);
 				$togglePlay.addEventListener('click', onTogglePlay);
+				$stationImage.addEventListener('click', onTogglePlay);
 			})
 			.catch(function(error) {
 				setError(error);
