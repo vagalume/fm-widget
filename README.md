@@ -15,8 +15,24 @@ fmWidget.init({
 
 ## Horizontal
 
-Largura Mínima: 690px
-Altura Mínima: 180px
+Largura Mínima: 690px  
+Largura Máxima: Não definido    
+Altura Mínima: 180px  
+Altura Máxima: 394px  
+
+## Vertical
+
+Largura Mínima: 250px  
+Largura Máxima: Não definido  
+Altura Mínima: 610px  
+Altura Máxima: Não definido
+
+### Vertical (Info quebrada)
+
+Largura Mínima: 250px  
+Largura Máxima: 400px  
+Altura Mínima (Com lista de Música): 641px   
+Altura Mínima (Sem lista): 610px
 
 # Github Mirror
 
