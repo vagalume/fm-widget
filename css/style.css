@@ -404,20 +404,20 @@
 }
 
 #vglFM .play-button {
-    background-image: url('/img/gplay.svg');
+    background-image: url('../img/gplay.svg');
     margin-right: 10px;
 }
 
 #vglFM .store-button {
-    background-image: url('/img/appstore.svg');
+    background-image: url('../img/appstore.svg');
 }
 
 #vglFM .play-button:hover {
-    background-image: url('/img/gplay-full.svg');
+    background-image: url('../img/gplay-full.svg');
 }
 
 #vglFM .store-button:hover {
-    background-image: url('/img/appstore-full.svg');
+    background-image: url('../img/appstore-full.svg');
 }
 
 #vglFM .loader {
