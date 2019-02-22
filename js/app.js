@@ -386,7 +386,7 @@ var fmWidget = {};
 		var $nextList = '';
 		for (var i = 0; i < songs.length; i++) {
 			var song = songs[i];
-			var startTime = new Date(song.tsStart * 1000);
+			var startTime = new Date(song.tsStart * 1000); // FIXME: tsStart === null (direto da API)
 			var hours = startTime.getHours() > 9 ? startTime.getHours() : '0' + startTime.getHours();
 			var minutes = startTime.getMinutes() > 9 ? startTime.getMinutes() : '0' + startTime.getMinutes();
 			$nextList += '<li>'
@@ -399,7 +399,7 @@ var fmWidget = {};
 					+ '</div>'
 					+ '</a>'
 				+ '</div>'
-				+ '<span class="next-time">' + (hours + ':' + minutes) + '</span>'
+				+ ((song.tsStart === null) ? '' : ('<span class="next-time">' + (hours + ':' + minutes) + '</span>'))
 			+ '</li>';
 		}
 
