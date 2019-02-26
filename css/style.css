@@ -683,10 +683,30 @@ body, html{
 		flex: 1;
 	}
 }
+#vglFM footer > a{
+	position: relative;
+}
 
 #vglFM footer .footer-logo{
 	height: 65px;
 	margin-bottom: 15px;
+	z-index: 4;
+  position: relative;
+}
+
+#vglFM footer > a::before{
+	content: '';
+	position: absolute;
+	background-color: #CCFF00;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	z-index: 2;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 12px;
+  box-shadow: 0 0px 40px 5px #CCFF00;
 }
 
 #vglFM footer .footer-info > div{
@@ -778,6 +798,11 @@ body, html{
 	#vglFM footer .footer-logo{
 		margin-top: 10px;
 	}
+
+	#vglFM footer > a::before{
+		top: 21px;
+    left: 50%;
+	}
 }
 
 @media (max-width: 400px) and (min-height: 395px){
@@ -795,11 +820,21 @@ body, html{
 	#vglFM footer p{
 		font-size: 12px;
 	}
+
+	#vglFM footer > a::before{
+		top: 20px;
+		width: 20px;
+		height: 20px;
+	}
 }
 
 @media (max-width: 800px) and (max-height: 394px){
 	#vglFM footer .footer-logo{
 		height: 60px;
+	}
+
+	#vglFM footer > a::before{
+		top: 10px;
 	}
 
 	/*#vglFM footer {
@@ -818,6 +853,10 @@ body, html{
 	}
 	#vglFM footer .footer-logo{
 		margin-right: 20px;
+	}
+	#vglFM footer > a::before{
+		top: 21px;
+    left: 103px;
 	}
 }
 
