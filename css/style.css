@@ -685,7 +685,7 @@ body, html{
 }
 
 #vglFM footer .footer-logo{
-	height: 75px;
+	height: 65px;
 	margin-bottom: 15px;
 }
 
@@ -776,13 +776,14 @@ body, html{
 	}
 
 	#vglFM footer .footer-logo{
-		margin-right: 20px;
+		margin-top: 10px;
 	}
 }
 
 @media (max-width: 400px) and (min-height: 395px){
 	#vglFM footer .footer-logo{
-		height: 75px;
+		height: 65px;
+		margin-top: 10px;
 	}
 }
 
@@ -814,6 +815,9 @@ body, html{
 	#vglFM footer{
 		flex-direction: row;
 		height: 100px;
+	}
+	#vglFM footer .footer-logo{
+		margin-right: 20px;
 	}
 }
 
