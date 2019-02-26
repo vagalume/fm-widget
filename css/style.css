@@ -504,10 +504,10 @@
 	top: 50%;
 	transform: translate3d(-50%, -50%, 0);
 	-webkit-transform: translate3d(-50%, -50%, 0);
-	max-width: 320px;
+	max-width: 240px;
 	border-radius: 5px;
 	padding: 14px;
-	min-width: 240px;
+	min-width: 215px;
 	box-shadow: 0px 8px 16px 0px #00000091;
 }
 
@@ -533,12 +533,14 @@
 	margin: 0;
 	font-size: 16px;
 	padding-right: 20px;
+	text-align: center;
 }
 
 #vglFM #shareBox ul {
-	padding: 0;
+	padding: 0 40px;
 	margin: 0;
 	margin-top: 15px;
+	margin-right: 20px;
 }
 
 #vglFM #shareBox ul li {
@@ -565,6 +567,9 @@
 
 #vglFM #shareBox ul li a span {
 	font-size: 14px;
+	display: block;
+	width: 100%;
+	text-align: center;
 }
 
 #vglFM #shareBox ul li.share-twitter a img {
@@ -896,10 +901,17 @@ body, html{
 	}
 }
 
-@media (max-height: 306px){ /* Modificar menu "Compartilhar" */
+@media (max-height: 333px){ /* Modificar menu "Compartilhar" */
+	#vglFM #shareBox{
+		max-width: 330px;
+	}
+
 	#vglFM #shareBox ul{
 		display: flex;
 		justify-content: space-around;
+		margin: 0;
+		margin-top: 15px;
+		padding: 0;
 	}
 
 	#vglFM #shareBox ul li{
