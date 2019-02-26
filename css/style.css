@@ -894,3 +894,25 @@ body, html{
 		margin-top: 20px;
 	}
 }
+
+@media (max-height: 306px){ /* Modificar menu "Compartilhar" */
+	#vglFM #shareBox ul{
+		display: flex;
+		justify-content: space-around;
+	}
+
+	#vglFM #shareBox ul li{
+    margin: 0;
+		padding: 0;
+	}
+
+	#vglFM #shareBox ul li a > img{
+		margin-right: 0;
+		width: 34px;
+		height: 34px;
+	}
+
+	#vglFM #shareBox ul li a > span{
+		display: none;
+	}
+}
