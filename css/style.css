@@ -637,6 +637,7 @@ body, html{
 #vglFM header .info > .song-info{
 	flex: 1;
 	padding: 0 20px;
+  max-width: 430px;
 }
 #vglFM header .station-info{
 	flex: 1;
@@ -901,5 +902,10 @@ body, html{
 
 	#vglFM #shareBox ul li a > span{
 		display: none;
+	}
+}
+@media (min-width: 1360px){
+	#vglFM header .info > .song-info{
+		max-width: 620px;
 	}
 }
