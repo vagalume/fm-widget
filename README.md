@@ -24,15 +24,15 @@ Altura Máxima: 394px
 
 Largura Mínima: 250px  
 Largura Máxima: Não definido  
-Altura Mínima: 610px  
+Altura Mínima: 640px  
 Altura Máxima: Não definido
 
 ### Vertical (Info quebrada)
 
 Largura Mínima: 250px  
 Largura Máxima: 400px  
-Altura Mínima (Com lista de Música): 641px   
-Altura Mínima (Sem lista): 610px
+Altura Mínima (Com lista de Música): 670px   
+Altura Mínima (Sem lista): 640px
 
 # Github Mirror
 
