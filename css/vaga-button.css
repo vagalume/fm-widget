@@ -45,6 +45,11 @@
 	.vagaButton.playAlpha:hover:before {background-image: url('../img/play-btn/sprite-big.svg#play-btn-big-hover');}
 	.vagaButton.playAlpha:active:before {background-image: url('../img/play-btn/sprite-big.svg#play-btn-big-pressed');}
 
+	.vagaButton.pauseAlpha:before {background-image: url('../img/play-btn/sprite-big.svg#pause-btn-big-alpha');}
+	.vagaButton.pauseAlpha:hover:before {background-image: url('../img/play-btn/sprite-big.svg#pause-btn-big-hover');}
+	.vagaButton.pauseAlpha:active:before {background-image: url('../img/play-btn/sprite-big.svg#pause-btn-big-pressed');}
+
+
 @media (min-width: 360px) {
 	.vagaButton.ext {
 		background-color: #333;
