@@ -465,6 +465,14 @@ var fmWidget = {};
 		}
 
 		$stationDescription.innerHTML = station.desc_station;
+
+		while($stationDescription.offsetHeight < $stationDescription.scrollHeight){
+			const tmp = $stationDescription.innerHTML.split(' ');
+			tmp.pop(); // Remove o '...'
+			tmp.pop(); // Remove a última palavra
+
+			$stationDescription.innerHTML = tmp.join(' ') + '...';
+		}
 	}
 
 	function onTogglePlay() {
