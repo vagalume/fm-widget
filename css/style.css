@@ -1,3 +1,22 @@
+@keyframes fadeInOutAnim {
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-o-keyframes fadeInOutAnim{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes fadeInOutAnim{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes fadeInOutAnim{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
 }
 
 #vglFM {
@@ -70,6 +89,13 @@
 	content: '';
 }
 
+#vglFM #togglePlay.fadeInOut {
+   -webkit-animation: fadeInOutAnim 1.5s infinite;
+   -moz-animation: fadeInOutAnim 1.5s infinite;
+   -o-animation: fadeInOutAnim 1.5s infinite;
+    animation: fadeInOutAnim 1.5s infinite;
+}
+
 #vglFM .station-img > img {
     width: 170px;
     height: 170px;
@@ -125,6 +151,7 @@
     min-width: 105px;
     flex: 1;
 		display: flex;
+		align-items: center;
 }
 
 #vglFM #artistName {

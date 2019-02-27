@@ -644,13 +644,16 @@ var fmWidget = {};
 		state = code;
 		switch (code) {
 			case STATE_BUFFERING:
+				startTogglePlayAnimation();
 				break;
 			case STATE_RUNNING:
+				stopTogglePlayAnimation();
 				$playIcon.classList.add('pauseAlpha');
 				$playIcon.classList.remove('playAlpha');
 				sendMetadata();
 				break;
 			case STATE_STOPPED:
+				stopTogglePlayAnimation();
 				$playIcon.classList.remove('pauseAlpha');
 				$playIcon.classList.add('playAlpha');
 				break;
@@ -658,8 +661,12 @@ var fmWidget = {};
 		}
 	}
 
+	function startTogglePlayAnimation() {
+		$togglePlay.classList.add('fadeInOut');
 	}
 
+	function stopTogglePlayAnimation() {
+		$togglePlay.classList.remove('fadeInOut');
 	}
 
 	function setProgress(position, duration) {
