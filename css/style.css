@@ -653,6 +653,11 @@ body, html{
 	max-height: 76px;
 }
 
+#vglFM #stationDescription.small{
+	font-size: 14px;
+  max-height: 85px;
+}
+
 /* @media (max-width: 960px) and (max-height: 394px) {
 	#vglFM footer{
 		max-width: 350px;

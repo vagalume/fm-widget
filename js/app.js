@@ -450,6 +450,20 @@ var fmWidget = {};
 
 		$widgetBG.style.backgroundImage = "url('" + station.img['bg-low'] + "')";
 		$stationImage.setAttribute('src', station.img.default);
+
+		if(station.desc_station.length >= 190){
+			$stationDescription.classList.add('small');
+			if(station.desc_station.length >= 260){
+				station.desc_station = station.desc_station.substring(0,260);
+
+				while(station.desc_station[station.desc_station.length-1] !== ' '){
+					station.desc_station = station.desc_station.substring(0,station.desc_station.length-1);
+				}
+
+				station.desc_station = station.desc_station.substring(0,station.desc_station.length-1) + '...';
+			}
+		}
+
 		$stationDescription.innerHTML = station.desc_station;
 	}
 
