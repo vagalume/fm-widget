@@ -128,6 +128,11 @@
     width: 20px;
 }
 
+#vglFM .station-info{
+		display: flex;
+		flex-direction: column-reverse;
+}
+
 #vglFM .station-info > div {
     display: inline-flex;
     flex-direction: row;
@@ -695,6 +700,10 @@ body, html{
 	#vglFM .share-options{
 		right: -10px;
 		top: -10px;
+	}
+
+	#vglFM header .station-info{
+		display: block;
 	}
 }
 
