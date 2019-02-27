@@ -328,7 +328,6 @@ var fmWidget = {};
 	var $nextSongList = $widget.querySelector('#nextSongList');
 	var $togglePlay = $widget.querySelector('#togglePlay');
 	var $playIcon = $togglePlay.querySelector('.vagaButton');
-	var $loader = $widget.querySelector('.loader');
 	var $progress = $widget.querySelector('#progress');
 	var $startTime = $widget.querySelector('#startTime');
 	var $endTime = $widget.querySelector('#endTime');
@@ -645,16 +644,13 @@ var fmWidget = {};
 		state = code;
 		switch (code) {
 			case STATE_BUFFERING:
-				showLoading();
 				break;
 			case STATE_RUNNING:
-				showTogglePlay();
 				$playIcon.classList.add('pauseAlpha');
 				$playIcon.classList.remove('playAlpha');
 				sendMetadata();
 				break;
 			case STATE_STOPPED:
-				showTogglePlay();
 				$playIcon.classList.remove('pauseAlpha');
 				$playIcon.classList.add('playAlpha');
 				break;
@@ -662,18 +658,8 @@ var fmWidget = {};
 		}
 	}
 
-	function showLoading() {
-		// if ($togglePlay.style.display !== 'none') {
-			// $togglePlay.style.display = 'none';
-			$loader.style.display = 'flex';
-		// }
 	}
 
-	function showTogglePlay() {
-		if ($loader.style.display !== 'none') {
-			$loader.style.display = 'none';
-			// $togglePlay.style.display = 'flex';
-		}
 	}
 
 	function setProgress(position, duration) {
