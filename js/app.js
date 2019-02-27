@@ -649,30 +649,30 @@ var fmWidget = {};
 				break;
 			case STATE_RUNNING:
 				showTogglePlay();
-				$playIcon.classList.add('pause');
-				$playIcon.classList.remove('play');
+				$playIcon.classList.add('pauseAlpha');
+				$playIcon.classList.remove('playAlpha');
 				sendMetadata();
 				break;
 			case STATE_STOPPED:
 				showTogglePlay();
-				$playIcon.classList.remove('pause');
-				$playIcon.classList.add('play');
+				$playIcon.classList.remove('pauseAlpha');
+				$playIcon.classList.add('playAlpha');
 				break;
 			default:
 		}
 	}
 
 	function showLoading() {
-		if ($togglePlay.style.display !== 'none') {
-			$togglePlay.style.display = 'none';
+		// if ($togglePlay.style.display !== 'none') {
+			// $togglePlay.style.display = 'none';
 			$loader.style.display = 'flex';
-		}
+		// }
 	}
 
 	function showTogglePlay() {
 		if ($loader.style.display !== 'none') {
 			$loader.style.display = 'none';
-			$togglePlay.style.display = 'flex';
+			// $togglePlay.style.display = 'flex';
 		}
 	}
 

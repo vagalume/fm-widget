@@ -123,19 +123,20 @@
 }
 
 #vglFM #togglePlay {
-	font-size: 30px;
-	width: 45px;
-	height: 35px;
+	font-size: 80px;
 	border: none;
 	background: transparent;
 	cursor: pointer;
 	outline: none;
 }
 
-#vglFM #togglePlay img {
-	width: 33px;
-	height: 33px;
-	position: absolute;
+#vglFM #togglePlay .vagaButton::before{
+	top: 0;
+	height: 64px;
+}
+
+#vglFM #togglePlay .vagaButton:after{
+	content: '';
 }
 
 #vglFM .station-img > img {
@@ -214,10 +215,6 @@
     overflow: hidden;
     white-space: nowrap;
     height: 24px;
-}
-
-#vglFM header .song-info {
-    margin-top: 20px;
 }
 
 #vglFM .progress-info .bar {
