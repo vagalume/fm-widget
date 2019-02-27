@@ -189,16 +189,6 @@
     margin: 0;
 }
 
-#vglFM #stationName {
-    color: #FFF;
-    margin: 0;
-    font-size: 20px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    height: 24px;
-}
-
 #vglFM .info {
     min-width: 105px;
     flex: 1;
@@ -628,10 +618,6 @@ body, html{
 	#vglFM #nextSongList li .next-time::before{
 		content: '';
 	}
-
-	#vglFM #stationName{
-		font-size: 18px;
-	}
 }
 
 @media (max-width: 295px){
@@ -922,9 +908,6 @@ body, html{
 	}
 	#vglFM #stationDescription{
 		display: block;
-	}
-	#vglFM #stationName{
-		display: none;
 	}
 }
 

@@ -321,9 +321,7 @@ var fmWidget = {};
 	var $widget = document.querySelector('#vglFM');
 	var $widgetBG = $widget.querySelector('.background');
 	var $stationImage = $widget.querySelector('.station-img > img');
-	var $stationName = $widget.querySelector('#stationName');
 	var $stationDescription = $widget.querySelector('#stationDescription');
-	var $stationUrl = $widget.querySelector('#stationUrl');
 	var $artistName = $widget.querySelector('#artistName');
 	var $songName = $widget.querySelector('#songName');
 	var $songUrl = $widget.querySelector('#songUrl');
@@ -453,9 +451,7 @@ var fmWidget = {};
 
 		$widgetBG.style.backgroundImage = "url('" + station.img['bg-low'] + "')";
 		$stationImage.setAttribute('src', station.img.default);
-		$stationName.innerHTML = station.name;
 		$stationDescription.innerHTML = station.desc_station;
-		$stationUrl.href = 'https://vagalume.fm/' + station.slug + '/';
 	}
 
 	function onTogglePlay() {
