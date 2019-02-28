@@ -21,27 +21,14 @@
 					<div class="top">
 						<div class="station-img">
 							<img src="img/placeholder.jpg"/>
-							<div class="button-container">
-								<div class="loader" style="display: none;">
-									<img class="spinner" src="img/spinner.svg" />
-									<img class="loader-icon" src="img/ico-vgl.svg" />
-								</div>
-								<button id="togglePlay">
-									<div class="vagaButton play">
-
-									</div>
-								</button>
-							</div>
 						</div>
 
 						<div class="info">
 							<div class="station-info">
-								<div>
-									<img src="img/ico-station.svg" />
-									<p>ESTAÇÃO</p>
-								</div>
-								<a id="stationUrl" target=_blank href=https://vagalume.fm/><p id="stationName"></p></a>
 								<p id="stationDescription"></p>
+								<button id="togglePlay">
+									<div class="vagaButton playAlpha"/>
+								</button>
 							</div>
 							<div class="song-info">
 								<div class="song-info">
@@ -80,14 +67,16 @@
 			</header>
 			<ul id="nextSongList"></ul>
 			<footer>
-				<img class="footer-logo" src="img/logo.png" />
+				<a href="https://vagalume.fm/" target=_blank>
+					<img class="footer-logo" src="img/vglfm-logo.svg" />
+				</a>
 				<div class="footer-info">
 					<div>
 						<p>Descubra mais estações no Vagalume.FM</p>
 					</div>
 					<div>
-						<a title="Google Play" href="https://play.google.com/store/apps/details?id=br.com.vagalume.fm&referrer=utm_source%3DWidget%26utm_campaign%3DPartner" target="_blank" class="play-button share-links"></a>
-						<a title="App Store" href="https://itunes.apple.com/us/app/vagalume.fm/id1154246231?pt=677321&ct=Widget%20-%20Partner&mt=8" target="_blank" class="store-button share-links"></a>
+						<a title="Google Play" href="https://play.google.com/store/apps/details?id=br.com.vagalume.fm&referrer=utm_source%3DWidget%26utm_campaign%3DPartner" target="_blank" class="play-button"></a>
+						<a title="App Store" href="https://itunes.apple.com/us/app/vagalume.fm/id1154246231?pt=677321&ct=Widget%20-%20Partner&mt=8" target="_blank" class="store-button"></a>
 					</div>
 					<div class="hide" id="errorPopup">
 						<span></span>

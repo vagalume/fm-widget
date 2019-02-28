@@ -321,16 +321,13 @@ var fmWidget = {};
 	var $widget = document.querySelector('#vglFM');
 	var $widgetBG = $widget.querySelector('.background');
 	var $stationImage = $widget.querySelector('.station-img > img');
-	var $stationName = $widget.querySelector('#stationName');
 	var $stationDescription = $widget.querySelector('#stationDescription');
-	var $stationUrl = $widget.querySelector('#stationUrl');
 	var $artistName = $widget.querySelector('#artistName');
 	var $songName = $widget.querySelector('#songName');
 	var $songUrl = $widget.querySelector('#songUrl');
 	var $nextSongList = $widget.querySelector('#nextSongList');
 	var $togglePlay = $widget.querySelector('#togglePlay');
 	var $playIcon = $togglePlay.querySelector('.vagaButton');
-	var $loader = $widget.querySelector('.loader');
 	var $progress = $widget.querySelector('#progress');
 	var $startTime = $widget.querySelector('#startTime');
 	var $endTime = $widget.querySelector('#endTime');
@@ -453,9 +450,29 @@ var fmWidget = {};
 
 		$widgetBG.style.backgroundImage = "url('" + station.img['bg-low'] + "')";
 		$stationImage.setAttribute('src', station.img.default);
-		$stationName.innerHTML = station.name;
+
+		if(station.desc_station.length >= 190){
+			$stationDescription.classList.add('small');
+			if(station.desc_station.length >= 260){
+				station.desc_station = station.desc_station.substring(0,260);
+
+				while(station.desc_station[station.desc_station.length-1] !== ' '){
+					station.desc_station = station.desc_station.substring(0,station.desc_station.length-1);
+				}
+
+				station.desc_station = station.desc_station.substring(0,station.desc_station.length-1) + '...';
+			}
+		}
+
 		$stationDescription.innerHTML = station.desc_station;
-		$stationUrl.href = 'https://vagalume.fm/' + station.slug + '/';
+
+		while($stationDescription.offsetHeight < $stationDescription.scrollHeight){
+			const tmp = $stationDescription.innerHTML.split(' ');
+			tmp.pop(); // Remove o '...'
+			tmp.pop(); // Remove a última palavra
+
+			$stationDescription.innerHTML = tmp.join(' ') + '...';
+		}
 	}
 
 	function onTogglePlay() {
@@ -649,35 +666,29 @@ var fmWidget = {};
 		state = code;
 		switch (code) {
 			case STATE_BUFFERING:
-				showLoading();
+				startTogglePlayAnimation();
 				break;
 			case STATE_RUNNING:
-				showTogglePlay();
-				$playIcon.classList.add('pause');
-				$playIcon.classList.remove('play');
+				stopTogglePlayAnimation();
+				$playIcon.classList.add('pauseAlpha');
+				$playIcon.classList.remove('playAlpha');
 				sendMetadata();
 				break;
 			case STATE_STOPPED:
-				showTogglePlay();
-				$playIcon.classList.remove('pause');
-				$playIcon.classList.add('play');
+				stopTogglePlayAnimation();
+				$playIcon.classList.remove('pauseAlpha');
+				$playIcon.classList.add('playAlpha');
 				break;
 			default:
 		}
 	}
 
-	function showLoading() {
-		if ($togglePlay.style.display !== 'none') {
-			$togglePlay.style.display = 'none';
-			$loader.style.display = 'flex';
-		}
+	function startTogglePlayAnimation() {
+		$togglePlay.classList.add('fadeInOut');
 	}
 
-	function showTogglePlay() {
-		if ($loader.style.display !== 'none') {
-			$loader.style.display = 'none';
-			$togglePlay.style.display = 'flex';
-		}
+	function stopTogglePlayAnimation() {
+		$togglePlay.classList.remove('fadeInOut');
 	}
 
 	function setProgress(position, duration) {
