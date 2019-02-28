@@ -36,7 +36,7 @@ Altura Mínima (Sem lista): 640px
 
 # Screenshots
 
-![exemplos.png](exemplos.png)
+![exemplos.png](exemplos/screenshots.png)
 
 # Github Mirror
 
